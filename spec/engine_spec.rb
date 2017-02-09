@@ -24,23 +24,42 @@ RSpec.describe Engine do
   #   expect(results).to eq(expected_result)
   # end
 
-  it "handles two digit permutations" do
+  # it "handles two digit permutations" do
+  #   engine = Engine.new
+
+  #   results = engine.run(23)
+
+  #   expected_result = ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+  #   expect(results).to eq(expected_result)
+  # end
+
+  # it "handles three digit permutations" do
+  #   engine = Engine.new
+
+  #   results = engine.run(234)
+
+  #   expected_result = ["adg", "adh", "adi", "aeg", "aeh", "aei", "afg", "afh", "afi", "bdg",
+  #                      "beg", "bdh", "bdi", "beh", "bei", "bfg", "bfh", "bfi", "cdg", "cdh", "cdi", "ceg",
+  #                      "ceh", "cei", "cfg", "cfh", "cfi"]
+  #   expect(results).to include(*expected_result)
+  # end
+
+  # it "handles a trivial case" do
+  #   engine = Engine.new
+
+  #   results = engine.run(234)
+
+  #   expected_result = [ "beg\n" ]
+  #   expect(results).to eq(expected_result)
+  # end
+
+
+  it "does a more complicated string" do
     engine = Engine.new
 
-    results = engine.run(23)
+    results = engine.run(43256)
 
-    expected_result = ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+    expected_result = ["gecko\n"]
     expect(results).to eq(expected_result)
-  end
-
-  it "handles three digit permutations" do
-    engine = Engine.new
-
-    results = engine.run(234)
-
-    expected_result = ["adg", "adh", "adi", "aeg", "aeh", "aei", "afg", "afh", "afi", "bdg",
-                       "beg", "bdh", "bdi", "beh", "bei", "bfg", "bfh", "bfi", "cdg", "cdh", "cdi", "ceg",
-                       "ceh", "cei", "cfg", "cfh", "cfi"]
-    expect(results).to include(*expected_result)
   end
 end

@@ -8,7 +8,14 @@ class Engine
       result = result.product(convert[numbers[i + 1]])
     end
 
-    result.map(&:join)
+    result = result.map(&:join)
+
+    words = File.readlines("./words")
+    slow_thing = result.find_all do |s|
+      words.include?(s.concat("\n"))
+    end
+
+    slow_thing
   end
 
   private
